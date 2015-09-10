@@ -1,0 +1,7 @@
+.root {
+	width: 500px;
+	height: 40px;
+	padding: 50px;
+	line-height: 20px;
+	border: 10px solid #ccc;
+}
