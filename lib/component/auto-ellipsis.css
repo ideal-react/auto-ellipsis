@@ -2,4 +2,5 @@
 	display: block;
 	height: 100%;
 	overflow: visible;
+	word-wrap: break-word;
 }
