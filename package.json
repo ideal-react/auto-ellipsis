@@ -1,6 +1,6 @@
 {
   "name": "auto-ellipsis",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "auto-ellipsis is a React component for truncation when content overlength.",
   "main": "./lib/index.js",
   "scripts": {
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/perfect-react-component/auto-ellipsis.git"
+    "url": "git+https://github.com/ideal-react/auto-ellipsis.git"
   },
   "keywords": [
     "react component",
@@ -23,9 +23,9 @@
   "author": "ustccjw",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/perfect-react-component/auto-ellipsis/issues"
+    "url": "https://github.com/ideal-react/auto-ellipsis/issues"
   },
-  "homepage": "https://github.com/perfect-react-component/auto-ellipsis#readme",
+  "homepage": "https://github.com/ideal-react/auto-ellipsis#readme",
   "devDependencies": {
     "autoprefixer": "^6.0.1",
     "babel-eslint": "^4.1.1",
