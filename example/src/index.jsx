@@ -7,5 +7,10 @@ const props = {
 	styles,
 }
 
+const container = (
+	<div>
+		<input type="text" />
+	</div>
+)
 React.render(<AutoEllipsis {...props} />,
 	document.getElementById('auto-ellipsis-wrap'))

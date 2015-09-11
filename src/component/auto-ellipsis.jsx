@@ -12,14 +12,20 @@ export default class AutoEllipsis extends React.Component {
 	static propTypes = {
 		tag: React.PropTypes.string,
 		content: React.PropTypes.string.isRequired,
+		addTile: React.PropTypes.bool,
 	}
 
 	static defaultProps = {
 		tag: 'div',
+		addTile: true,
 	}
 
 	componentDidMount() {
 		this.computeContent()
+	}
+
+	componentWillReceiveProps(nextProps) {
+		this.setState({content: nextProps.content})
 	}
 
 	componentDidUpdate() {
@@ -36,9 +42,12 @@ export default class AutoEllipsis extends React.Component {
 		const range = document.createRange()
 		range.selectNodeContents(dom)
 		let bottom = range.getBoundingClientRect().bottom
-		let content = this.state.content
 		if (bottom > parentBottom) {
-			dom.title = content
+			let content = this.state.content
+			if (this.props.addTile) {
+				dom.title = content
+			}
+
 			const container = dom.firstChild
 			let endPoint = content.length - 1
 			range.setStart(container, 0)
