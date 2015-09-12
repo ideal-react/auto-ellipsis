@@ -29,7 +29,6 @@
   "homepage": "https://github.com/ideal-react/auto-ellipsis#readme",
   "devDependencies": {
     "autoprefixer": "^6.0.1",
-    "babel": "^5.8.23",
     "babel-eslint": "^4.1.1",
     "babel-loader": "^5.3.2",
     "css-loader": "^0.16.0",
