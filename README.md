@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/ustccjw/auto-ellipsis.svg)](https://travis-ci.org/ustccjw/auto-ellipsis)
+
 # auto-ellipsis
 
 > auto-ellipsis is a React component for truncation when content overlength.
