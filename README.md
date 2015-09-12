@@ -1,6 +1,4 @@
-[![Build Status](https://travis-ci.org/ideal-react/auto-ellipsis.svg)](https://travis-ci.org/ideal-react/auto-ellipsis)
-
-# auto-ellipsis
+# auto-ellipsis [![Build Status](https://travis-ci.org/ideal-react/auto-ellipsis.svg)](https://travis-ci.org/ideal-react/auto-ellipsis)
 
 > auto-ellipsis is a React component for truncation when content overlength.
 
