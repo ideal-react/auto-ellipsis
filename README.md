@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/ustccjw/auto-ellipsis.svg)](https://travis-ci.org/ustccjw/auto-ellipsis)
+[![Build Status](https://travis-ci.org/ideal-react/auto-ellipsis.svg)](https://travis-ci.org/ideal-react/auto-ellipsis)
 
 # auto-ellipsis
 
