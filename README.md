@@ -29,6 +29,7 @@ See [demo][3].
 
 MIT.
 
+
 [1]: https://github.com/css-modules/css-modules
 [2]: https://github.com/gajus/react-css-modules
 [3]: http://ideal-react.github.io
