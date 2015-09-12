@@ -5,10 +5,6 @@ import styles from './auto-ellipsis.css'
 
 @CSSModules(styles)
 export default class AutoEllipsis extends React.Component {
-	constructor(props) {
-		super(props)
-	}
-
 	static propTypes = {
 		tag: React.PropTypes.string,
 		content: React.PropTypes.string.isRequired,
