@@ -9,7 +9,6 @@ var host = 'http://127.0.0.1:3001'
 module.exports = {
 	entry: [
 		'webpack-dev-server/client?' + host,
-		'webpack/hot/only-dev-server',
 		'mocha!./test/index.js',
 	],
 	output: {
@@ -20,7 +19,7 @@ module.exports = {
 	module: {
 		loaders: [{
 			test: /\.(js|jsx)$/,
-			loader: 'react-hot!babel',
+			loader: 'babel',
 			exclude: /node_modules/,
 		}, {
 			test: /\.css$/,
@@ -32,7 +31,6 @@ module.exports = {
 	},
 	postcss: [autoprefixer],
 	plugins: [
-		new webpack.HotModuleReplacementPlugin(),
 		new webpack.optimize.OccurenceOrderPlugin(),
 		new webpack.DefinePlugin({
 			'process.env.NODE_ENV': JSON.stringify('test'),

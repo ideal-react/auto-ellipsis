@@ -7,29 +7,26 @@ import styles from './auto-ellipsis.css'
 export default class AutoEllipsis extends React.Component {
 	constructor(props) {
 		super(props)
-		this.state = {content: props.content}
 	}
 
 	static propTypes = {
 		tag: React.PropTypes.string,
 		content: React.PropTypes.string.isRequired,
-		addTile: React.PropTypes.bool,
+		addTitle: React.PropTypes.bool,
 		styles: React.PropTypes.object,
 	}
 
 	static defaultProps = {
 		tag: 'div',
-		addTile: true,
+		addTitle: true,
 	}
 
 	componentDidMount() {
 		this.computeContent()
 	}
 
-	componentWillReceiveProps(nextProps) {
-		if (JSON.stringify(this.props) !== JSON.stringify(nextProps)) {
-			this.setState({content: nextProps.content})
-		}
+	shouldComponentUpdate(nextProps, nextState) {
+		return JSON.stringify(this.props) !== JSON.stringify(nextProps)
 	}
 
 	componentDidUpdate() {
@@ -47,9 +44,11 @@ export default class AutoEllipsis extends React.Component {
 		range.selectNodeContents(dom)
 		let bottom = range.getBoundingClientRect().bottom
 		if (bottom > parentBottom) {
-			let content = this.state.content
-			if (this.props.addTile) {
-				dom.title = content
+			let content = this.props.content
+			if (this.props.addTitle) {
+				dom.setAttribute('title', content)
+			} else {
+				dom.removeAttribute('title')
 			}
 
 			const container = dom.firstChild
@@ -71,22 +70,21 @@ export default class AutoEllipsis extends React.Component {
 					} else {
 						content = '...'
 					}
-					this.setState({content})
+					dom.innerHTML = content
 					break
 				}
 				endPoint--
 			}
+		} else {
+			dom.removeAttribute('title')
 		}
 	}
 
 	render() {
 		const props = {
 			styleName: 'root',
-			onClick: () => {
-				this.forceUpdate()
-			},
 		}
-		return React.createElement(this.props.tag, props,
-			this.state.content)
+		const {tag, content} = this.props
+		return React.createElement(tag, props, content)
 	}
 }
