@@ -4,18 +4,17 @@ var path = require('path')
 var webpack = require('webpack')
 var autoprefixer = require('autoprefixer')
 
-var host = 'http://127.0.0.1:3000'
+var host = 'http://127.0.0.1:3001'
 
 module.exports = {
-	devtool: '#eval-source-map',
 	entry: [
 		'webpack-dev-server/client?' + host,
 		'webpack/hot/only-dev-server',
-		'./example/src/index.jsx',
+		'mocha!./test/index.js',
 	],
 	output: {
 		path: path.join(__dirname, 'temp'),
-		filename: 'index.js',
+		filename: 'test.js',
 		publicPath: host + '/static/',
 	},
 	module: {
@@ -36,7 +35,7 @@ module.exports = {
 		new webpack.HotModuleReplacementPlugin(),
 		new webpack.optimize.OccurenceOrderPlugin(),
 		new webpack.DefinePlugin({
-			'process.env.NODE_ENV': JSON.stringify('development'),
+			'process.env.NODE_ENV': JSON.stringify('test'),
 		}),
 	]
 }

@@ -1,5 +1,6 @@
 import React from 'react'
-import AutoEllipsis from '../../src'
+import ReactDOM from 'react-dom'
+import AutoEllipsis from '../../src/'
 import styles from './index.css'
 
 const props = {
@@ -7,10 +8,5 @@ const props = {
 	styles,
 }
 
-const container = (
-	<div>
-		<input type="text" />
-	</div>
-)
-React.render(<AutoEllipsis {...props} />,
+ReactDOM.render(<AutoEllipsis {...props} />,
 	document.getElementById('auto-ellipsis-wrap'))

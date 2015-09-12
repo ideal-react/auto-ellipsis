@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactDOM from 'react-dom'
 import CSSModules from 'react-css-modules'
 import styles from './auto-ellipsis.css'
 
@@ -13,6 +14,7 @@ export default class AutoEllipsis extends React.Component {
 		tag: React.PropTypes.string,
 		content: React.PropTypes.string.isRequired,
 		addTile: React.PropTypes.bool,
+		styles: React.PropTypes.object,
 	}
 
 	static defaultProps = {
@@ -25,7 +27,9 @@ export default class AutoEllipsis extends React.Component {
 	}
 
 	componentWillReceiveProps(nextProps) {
-		this.setState({content: nextProps.content})
+		if (JSON.stringify(this.props) !== JSON.stringify(nextProps)) {
+			this.setState({content: nextProps.content})
+		}
 	}
 
 	componentDidUpdate() {
@@ -33,7 +37,7 @@ export default class AutoEllipsis extends React.Component {
 	}
 
 	computeContent() {
-		const dom = React.findDOMNode(this)
+		const dom = ReactDOM.findDOMNode(this)
 		let parentBottom = dom.getBoundingClientRect().bottom
 		const style = document.defaultView.getComputedStyle(dom, null)
 		parentBottom = parentBottom - parseFloat(style.paddingBottom) -
@@ -78,7 +82,11 @@ export default class AutoEllipsis extends React.Component {
 	render() {
 		const props = {
 			styleName: 'root',
+			onClick: () => {
+				this.forceUpdate()
+			},
 		}
-		return React.createElement(this.props.tag, props, this.state.content)
+		return React.createElement(this.props.tag, props,
+			this.state.content)
 	}
 }
