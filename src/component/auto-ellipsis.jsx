@@ -56,12 +56,6 @@ export default class AutoEllipsis extends React.Component {
 				if (bottom <= parentBottom) {
 					if (endPoint - 3 > 0) {
 						content = content.slice(0, endPoint - 3)
-						if (content[content.length -1] !== ' ') {
-							const lastIndex = content.lastIndexOf(' ')
-							if (lastIndex !== -1) {
-								content = content.slice(0, lastIndex)
-							}
-						}
 						content += '...'
 					} else {
 						content = '...'
