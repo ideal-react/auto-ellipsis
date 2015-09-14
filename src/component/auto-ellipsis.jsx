@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import CSSModules from 'react-css-modules'
 import styles from './auto-ellipsis.css'
 
-@CSSModules(styles, {errorWhenNotFound: process.env.NODE_ENV !== 'test'})
+@CSSModules(styles)
 export default class AutoEllipsis extends React.Component {
 	static propTypes = {
 		tag: React.PropTypes.string,
