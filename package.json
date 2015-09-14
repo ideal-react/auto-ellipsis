@@ -7,7 +7,7 @@
     "start": "node server",
     "test": "node server test",
     "clean": "rimraf lib temp",
-    "lint": "eslint src test --ext .js,.jsx",
+    "lint": "eslint src test example --ext .js,.jsx",
     "build:lib": "babel src --out-dir lib && cp src/component/*.css lib/component",
     "build": "npm run clean && npm run lint && npm run build:lib",
     "prepublish": "npm run build"
