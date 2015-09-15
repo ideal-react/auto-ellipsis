@@ -7,8 +7,10 @@ var autoprefixer = require('autoprefixer')
 var host = 'http://127.0.0.1:3001'
 
 module.exports = {
+	devtool: '#eval-source-map',
 	entry: [
 		'webpack-dev-server/client?' + host,
+		'webpack/hot/dev-server',
 		'mocha!./test/index.js',
 	],
 	output: {
@@ -31,7 +33,7 @@ module.exports = {
 	},
 	postcss: [autoprefixer],
 	plugins: [
-		new webpack.optimize.OccurenceOrderPlugin(),
+		new webpack.HotModuleReplacementPlugin(),
 		new webpack.DefinePlugin({
 			'process.env.NODE_ENV': JSON.stringify('test'),
 		}),

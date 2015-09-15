@@ -1,6 +1,6 @@
 {
   "name": "auto-ellipsis",
-  "version": "1.1.5",
+  "version": "1.2.0",
   "description": "auto-ellipsis is a React component for truncation when content overlength.",
   "main": "./lib/index.js",
   "scripts": {

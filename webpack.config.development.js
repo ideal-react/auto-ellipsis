@@ -34,7 +34,6 @@ module.exports = {
 	postcss: [autoprefixer],
 	plugins: [
 		new webpack.HotModuleReplacementPlugin(),
-		new webpack.optimize.OccurenceOrderPlugin(),
 		new webpack.DefinePlugin({
 			'process.env.NODE_ENV': JSON.stringify('development'),
 		}),
