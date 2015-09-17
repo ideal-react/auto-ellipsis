@@ -12,7 +12,7 @@ Auto-ellipsis use [css-modules][1] to resolve `css in react`. So you may use som
 
 ## custom UI
 
-Auto-ellipsis use [react-css-modules][2], i have a PR for custom UI (before merge, use `ideal-react/react-css-modules#dev` source). This PR is make custom UI possible. We can use `css-loader?modules&localIdentName=[local]-[hash:base64:5]` in dev, then we can base `[local]` to set our own styles.
+Auto-ellipsis use [react-css-modules][2], it provide a high-order component to make css-modules apply in React component painlessly. We can use `css-loader?modules&localIdentName=[local]-[hash:base64:5]` in dev, then we can base `[local]` to set our own styles.
 You set your own styles, pass styles as props to component. More check example.
 
 ## principle

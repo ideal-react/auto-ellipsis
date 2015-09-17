@@ -4,4 +4,5 @@
 	padding: 50px;
 	line-height: 20px;
 	border: 10px solid #ccc;
+	composes: root from '../../src/component/auto-ellipsis.css';
 }
